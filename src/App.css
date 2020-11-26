@@ -7,10 +7,10 @@
   --ivory: #F7F6EB;
 }
 
-.title-font {
-  font-family: 'Special Elite', cursive;
+body {
+  font-family: 'Quattrocento Sans', sans-serif !important;
 }
 
-.body-font {
-  font-family: 'Quattrocento Sans', sans-serif;
+.text-title {
+  font-family: 'Special Elite', cursive;
 }
