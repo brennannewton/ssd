@@ -9,8 +9,11 @@
 
 body {
   font-family: 'Quattrocento Sans', sans-serif !important;
+  background: var(--onyx) !important;
+  color: var(--ivory) !important;
 }
 
 .text-title {
   font-family: 'Special Elite', cursive;
+  color: var(--ivory) !important;
 }
