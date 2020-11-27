@@ -8,7 +8,7 @@ import Instagram from '../img/ig_ivory.png';
 export default class Navbar extends Component {
     render() {
         return (
-            <NavWrapper className="navbar navbar-expand-sm text-title justify-content-center">
+            <NavWrapper className="navbar navbar-expand-sm mx-auto my-2 text-title">
                 <div className="mr-auto">
                     <Link to="/shop">
                         <NavButton>Shop</NavButton>
@@ -32,7 +32,7 @@ export default class Navbar extends Component {
                         rel="noreferrer"
                         className="m-1"
                     >
-                        <img src={Facebook} alt="Facebook icon" style={{height: '40px'}}/>
+                        <img src={Facebook} alt="Facebook icon" style={{height: '35px'}}/>
                     </a>
                     <a
                         href="https://www.instagram.com/emma.lee.makes.jewelry/"
@@ -40,7 +40,7 @@ export default class Navbar extends Component {
                         rel="noreferrer"
                         className="m-1"
                     >
-                        <img src={Instagram} alt="Instagram icon" style={{height: '40px'}}/>
+                        <img src={Instagram} alt="Instagram icon" style={{height: '35px'}}/>
                     </a>
                 </div>
             </NavWrapper>
