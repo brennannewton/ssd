@@ -6,25 +6,30 @@ import PropTypes from 'prop-types';
 
 export default class Product extends Component {
     render() {
-        const {img, title, price} = this.props.product;
+        const { id, img, title, price, inCart } = this.props.product;
 
         return (
             <ProductWrapper className="col-9 mx-auto col-md-6 col-lg-3">
                 <div className="card mb-4">
                     <ProductConsumer>
                         {(value) => (
-                            <div className="img-container" onClick={() =>value.handleInfo()}>
-                                <Link to="/info">
-                                    <img src={img} alt="Product" className="card-image-top"/>
-                                </Link>
-                            </div>
+                            <React.Fragment>
+                                <div className="img-container" onClick={() => value.handleInfo(id)}>
+                                    <Link to="/info">
+                                        <img src={img} alt="Product" className="card-image-top"/>
+                                    </Link>
+                                </div>
+                                <div className="card-footer text-center px-0 pb-4">
+                                    <p className="product-title mb-2">{title}</p>
+                                    <button
+                                        className="product-price p-2 px-3"
+                                        disabled={inCart ? true : false}
+                                        onClick={() => value.addToCart()}
+                                    >Add to Cart ${price}</button>
+                                </div>
+                            </React.Fragment>
                         )}
                     </ProductConsumer>
-                    {/* Card footer: title and price */}
-                    <div className="card-footer text-center px-0 pb-4">
-                        <p className="product-title mb-2">{title}</p>
-                        <button className="product-price p-2 px-3">Add to Cart ${price}</button>
-                    </div>
                 </div>
             </ProductWrapper>
         )
@@ -33,9 +38,11 @@ export default class Product extends Component {
 
 Product.propTypes = {
     product: PropTypes.shape({
+        id: PropTypes.number,
         img: PropTypes.string,
         title: PropTypes.string,
-        price: PropTypes.number
+        price: PropTypes.number,
+        inCart: PropTypes.bool
     }).isRequired
 }
 
