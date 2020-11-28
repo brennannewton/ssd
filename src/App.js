@@ -8,7 +8,7 @@ import Navbar from './Components/Navbar';
 import Landing from './Components/Landing';
 import ProductList from './Components/ProductList';
 import ProductInfo from './Components/ProductInfo';
-import Cart from './Components/Cart';
+import Cart from './Components/Cart/Cart';
 import About from './Components/About';
 import Err from './Components/Err';
 

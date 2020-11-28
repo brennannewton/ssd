@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { ProductConsumer } from '../context';
 import PropTypes from 'prop-types';
+import { CartBtn } from './CartBtn';
 
 export default class Product extends Component {
     render() {
@@ -21,11 +22,11 @@ export default class Product extends Component {
                                 </div>
                                 <div className="card-footer text-center px-0 pb-4">
                                     <p className="product-title mb-2">{title}</p>
-                                    <button
-                                        className="product-price p-2 px-3"
+                                    <CartBtn
+                                        className="p-2 px-3"
                                         disabled={inCart ? true : false}
-                                        onClick={() => value.addToCart()}
-                                    >Add to Cart ${price}</button>
+                                        onClick={() => value.addToCart(id)}
+                                    >{inCart ? 'In Cart' : `Add to Cart $${price}`}</CartBtn>
                                 </div>
                             </React.Fragment>
                         )}
@@ -66,18 +67,6 @@ const ProductWrapper = styled.div`
     background: var(--onyx);
     .product-title {
         font-size: 1.25rem;
-    }
-    .product-price {
-        color: var(--onyx);
-        background: var(--mint);
-        border: none;
-        transition: all 0.3s ease-in-out;
-    }
-    .product-price:hover {
-        background var(--ivory);
-    }
-    .product-price:focus {
-        outline: none;
     }
 }
 `
