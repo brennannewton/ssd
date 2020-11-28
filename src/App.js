@@ -10,6 +10,7 @@ import ProductList from './Components/ProductList';
 import ProductInfo from './Components/ProductInfo';
 import Cart from './Components/Cart/Cart';
 import About from './Components/About';
+import Confirmation from './Components/Confirmation';
 import Err from './Components/Err';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/info" component={ProductInfo}></Route>
         <Route path="/cart" component={Cart}></Route>
         <Route path="/about" component={About}></Route>
+        <Route path="/confirmation" component={Confirmation}></Route>
         <Route component={Err}></Route>
       </Switch>
     </React.Fragment>

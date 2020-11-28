@@ -13,6 +13,7 @@ class ProductProvider extends Component {
         cartSubtotal: 0,
         cartTax: 0,
         cartTotal: 0,
+        payment: {}
     }
 
     componentDidMount() {
@@ -106,6 +107,12 @@ class ProductProvider extends Component {
         });
     }
 
+    handleConfirmation = (paymentInfo) => {
+        this.setState(() => {
+            return { payment: paymentInfo }
+        });
+    }
+
     render() {
         return (
             <ProductContext.Provider value={{
@@ -113,7 +120,8 @@ class ProductProvider extends Component {
                 handleInfo: this.handleInfo,
                 addToCart: this.addToCart,
                 removeItem: this.removeItem,
-                clearCart: this.clearCart
+                clearCart: this.clearCart,
+                handleConfirmation: this.handleConfirmation
             }}>
                 {this.props.children}
             </ProductContext.Provider>

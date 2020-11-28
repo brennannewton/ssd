@@ -4,7 +4,7 @@ import React from 'react';
 import PayPalBtn from './PayPalBtn';
 
 export default function CartTotals({value, history}) {
-    const { cartSubtotal, cartTax, cartTotal, clearCart } = value;
+    const { cartSubtotal, cartTax, cartTotal, clearCart, handleConfirmation } = value;
     return (
         <React.Fragment>
             <div className="container">
@@ -18,18 +18,18 @@ export default function CartTotals({value, history}) {
                             clear cart
                         </button>
                         <h5>
-                            <span className="text-title">subtotal: </span>
+                            <span className="info-title">subtotal: </span>
                             <strong>${ cartSubtotal.toFixed(2) }</strong>
                         </h5>
                         <h5>
-                            <span className="text-title">tax (7%): </span>
+                            <span className="info-title">tax (7%): </span>
                             <strong>${ cartTax.toFixed(2) }</strong>
                         </h5>
                         <h5>
-                            <span className="text-title">total: </span>
+                            <span className="info-title">total: </span>
                             <strong>${ cartTotal.toFixed(2) }</strong>
                         </h5>
-                        <PayPalBtn total={cartTotal} clearCart={clearCart} history={history}/>
+                        <PayPalBtn total={cartTotal} clearCart={clearCart} handleConfirmation={handleConfirmation} history={history}/>
                     </div>
                 </div>
             </div>
