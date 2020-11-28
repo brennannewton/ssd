@@ -3,7 +3,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Switch, Route } from 'react-router-dom';
 
-//vComponents
+//Components
 import Navbar from './Components/Navbar';
 import Landing from './Components/Landing';
 import ProductList from './Components/ProductList';
