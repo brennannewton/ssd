@@ -1,8 +1,9 @@
 /* eslint react/prop-types: 0 */
 
 import React from 'react';
+import PayPalBtn from './PayPalBtn';
 
-export default function CartTotals({value}) {
+export default function CartTotals({value, history}) {
     const { cartSubtotal, cartTax, cartTotal, clearCart } = value;
     return (
         <React.Fragment>
@@ -28,6 +29,7 @@ export default function CartTotals({value}) {
                             <span className="text-title">total: </span>
                             <strong>${ cartTotal.toFixed(2) }</strong>
                         </h5>
+                        <PayPalBtn total={cartTotal} clearCart={clearCart} history={history}/>
                     </div>
                 </div>
             </div>

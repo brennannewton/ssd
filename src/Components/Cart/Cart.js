@@ -18,7 +18,7 @@ export default class Cart extends Component {
                                     <h2 className="text-title text-center">Your Cart</h2>
                                     <CartColumns/>
                                     <CartList value={value}/>
-                                    <CartTotals value={value}/>
+                                    <CartTotals value={value} history={this.props.history}/>
                                 </React.Fragment>
                             );
                         } else {
