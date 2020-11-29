@@ -18,6 +18,12 @@ body {
   color: var(--mint) !important;
 }
 
+@media (min-width: 760px) {
+  .text-title h1 {
+    font-size: 12.5rem;
+  }
+}
+
 .info-title {
   font-family: 'Special Elite', cursive;
   color: var(--ivory) !important;
